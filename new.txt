@@ -1,26 +1,36 @@
-/* start เนื้อหา main movies */
-.main-movies {
+.movies-main{
+    color: #fff;  
+}
+.bg-main{
+    position: relative;
+}
+.bg-main:after{
+    content: '';
     position: absolute;
-    color: #fff;
-    top: 150px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to top,#111, transparent 100%);
+}
+.bg-main .image-movies{
+    
+    object-fit: cover;
+}
+
+.info-trailer{
+    position: absolute;
+    top: 13rem;
+    left: 3rem;
     width: 100%;
 }
 
-.description-header {
-    padding-left: 3rem;
-
-}
-
-/* logo main movies */
-.description-header img {
+.info-trailer .logo-trailer{
     width: 30%;
 }
 
-/* เรื่องย่อ */
-.description-header p {
-    max-width: 500px;
-    padding: 1.8rem 0;
-    font-weight: 500;
+.info-trailer .description-movies{
+    width: 50%;
 }
 
 /* container buttton */
@@ -143,3 +153,104 @@
                 </div>
             </div>
         </div>
+
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999999;
+}
+
+.bgnavbar {
+    background: #000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s all ease-in-out;
+    
+    
+}
+
+/* start ปุ่มเมนู navbar ฝั่งซ้าย */
+
+.navbar-container img {
+    
+    width: 30%;
+    object-fit: contain;
+    
+}
+.tab-primary-navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+.list-menu{
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 250px;
+    
+}
+.list-menu li{
+    padding: 0.7rem;
+}
+
+.list-menu li a{
+    
+    color: #fff;
+}
+.list-menu li:hover{
+    background-color: rgba(35, 35, 35, 0.6);
+}
+
+.browse-navbar{
+    color: #fff;
+    
+}
+
+
+/* end ปุ่มเมนู navbar ฝั่งซ้าย */
+
+/* start ปุ่มเมนู navbar ฝั่งขวา */
+.tab-second-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-navbar {
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.account-icons {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background: red;
+    
+}
+
+.tab-second-navbar li{
+    padding: 0.7rem;
+}
+
+.tab-second-navbar li a{
+    color: #fff;
+}
+
+.account-dropdown {
+    position: absolute;
+    top: 0.5rem;
+    left: 2.5rem;
+    color: #fff;
+}
+
+/* end ปุ่มเมนู navbar ฝั่งขวา */

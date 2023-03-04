@@ -13,110 +13,189 @@
 <body>
     <div class="main">
         <!-- navbar -->
-        <nav id="navbar">
-            <div class="navbar-container">
-                <div class="tab-primary-navbar">
-                    <img class="logo-navbar" src="/src/Netflix-Logo.wine.svg" alt="">
-                    <div class="menu-navbar">
-                        <ul class="list-menu">
-                            <li class="navigation-tab">
-                                <a class="current active" href="">Home</a>
-                            </li>
-                            <li class="navigation-tab">
-                                <a href="">TV Shows</a>
-                            </li>
-                            <li class="navigation-tab">
-                                <a href="">Movies</a>
-                            </li>
-                            <li class="navigation-tab">
-                                <a href="">New & Popular</a>
-                            </li>
-                            <li class="navigation-tab">
-                                <a href="">My List</a>
-                            </li>
-                            <li class="navigation-tab">
-                                <a href="">Browse My Languages</a>
-                            </li>
-                        </ul>
-                        <li class="navigation-menu">
-                            <a class="browse-navbar" href="">browse
-                                <i class="fa-solid fa-caret-down"></i></a>
-                        </li>
-                    </div>
-
-                </div>
-                <ul class="tab-second-navbar">
-                    <li>
-                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fa-regular fa-bell"></i></a>
-                    </li>
-                    <li>
-                        <a href="">Kids</a>
-                    </li>
-                    <div class="account-navbar">
-                        <div class="account-icons">
-                            <img src="" alt="">
-                        </div>
-                        <div class="account-dropdown">
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </nav>
 
         <!--movie main  -->
 
         <div class="movies-main">
-            <div class="bg-main">
-                <div class="trailer-movies">
-                    <img class="image-movies" src="/src/poster-navbar.jpg" alt="">
-                </div>
-            </div>
-            <!-- <div class="info-trailer">
-                <div class="logo-trailer">
-                    <img class="logo-movies" src="/src/Avengers_endgame_logo.png" alt="">
-                </div>
+            <img class="poster-movies" src="/src/poster-navbar.jpg" alt="poster-main">
+            <div class="poster-main-container">
                 <div class="description-movies">
-                    <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With
-                        the
-                        help of remaining allies, the Avengers assemble once more in order to reverse Thanos'
-                        actions
-                        and
-                        restore balance to the universe.</p>
+                    <div class="logo-movies">
+                        <img src="/src/Avengers_endgame_logo.png" alt="Avenger-Endgame">
+                    </div>
+                    <!-- description -->
+                    <div class="description">
+                        <p>
+                            the Avengers assemble once more in order to reverse Thanos'
+                            actions and restore balance to the universe.</p>
+                    </div>
+                    <!-- button -->
+
+                    <button class="play btn">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Play</span>
+                    </button>
+                    <button class="info btn">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <span>More Info</span>
+                    </button>
                 </div>
-                <div class="button-header">
-                    <div class="button-container">
-                        <button class="play btn">
-                            <div class="icons-btn">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="font-btn">
-                                Play
-                            </div>
-                        </button>
-                        <button class="info btn">
-                            <div class="icons-btn">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            </div>
-                            <div class="font-btn">
-                                More Info
-                            </div>
-                        </button>
+                <!-- info rating -->
+                <div class="info-rating">
+                    <div class="icons-rating">
+                        <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="rating-movies">
+                        <span>16+</span>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
 
-    </div>
+
+        <div class="sliderMovies">
+            <div class="slider-name">Trending Now</div>
+            <div class="slider-container">
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"> <i
+                        class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="sliderMoviesBox">
+                    <img src="/src/Trending Now/large-poster1.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster2.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster3.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster4.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster5.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster6.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster7.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster8.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster9.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster10.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster11.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster12.jpg" alt="">
+                </div>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"> <i
+                        class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="sliderMovies">
+            <div class="slider-name">New Releases</div>
+            <div class="slider-container">
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"> <i
+                        class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="sliderMoviesBox">
+                    <img src="/src/Trending Now/large-poster1.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster2.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster3.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster4.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster5.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster6.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster7.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster8.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster9.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster10.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster11.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster12.jpg" alt="">
+                </div>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"> <i
+                        class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="sliderMovies">
+            <div class="slider-name">Popular on Netflix</div>
+            <div class="slider-container">
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"> <i
+                        class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="sliderMoviesBox">
+                    <img src="/src/Trending Now/large-poster1.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster2.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster3.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster4.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster5.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster6.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster7.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster8.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster9.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster10.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster11.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster12.jpg" alt="">
+                </div>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"> <i
+                        class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="sliderMovies">
+            <div class="slider-name">Popular on Netflix</div>
+            <div class="slider-container">
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"> <i
+                        class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="sliderMoviesBox">
+                    <img src="/src/Trending Now/large-poster1.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster2.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster3.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster4.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster5.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster6.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster7.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster8.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster9.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster10.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster11.jpg" alt="">
+                    <img src="/src/Trending Now/large-poster12.jpg" alt="">
+                </div>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"> <i
+                        class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+
+
+            <div class="sliderMovies">
+                <div class="slider-name">Popular on Netflix</div>
+                <div class="slider-container">
+                    <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"> <i
+                            class="fa-solid fa-chevron-left"></i>
+                    </a>
+                    <div class="sliderMoviesBox">
+                        <img src="/src/Trending Now/large-poster1.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster2.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster3.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster4.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster5.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster6.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster7.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster8.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster9.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster10.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster11.jpg" alt="">
+                        <img src="/src/Trending Now/large-poster12.jpg" alt="">
+                    </div>
+                    <a class="switchRight sliderButton" onclick="sliderScrollRight()"> <i
+                            class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
 
 
 
 
 
-    <script src="/JAVASCRIPT/index.js"></script>
+
+
+
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+        <script src="/JAVASCRIPT/index.js"></script>
 </body>
 
 </html>
