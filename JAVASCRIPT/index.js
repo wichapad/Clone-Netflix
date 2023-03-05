@@ -32,6 +32,7 @@ function showMovieData() {
         .then(data => {
             console.log(data.results)
             const movies = data.results;
+            
             const sliderMoviesBox = document.createElement('div');
             sliderMoviesBox.classList.add('sliderMoviesBox')
 
@@ -48,17 +49,23 @@ function showMovieData() {
             anchorRight.onclick = function() { sliderScrollRight(); };
             anchorRight.textContent = ">";
 
+            // const genre = document.createElement("h2");
+            // genre.textContent = "trending Now";
+
             movies.forEach(function (movie) {
 
                 const poster = document.createElement('img');
                 poster.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
 
-                BoxMovie.appendChild(poster);
+                slider.appendChild(sliderMoviesBox);
+                // slider.appendChild(genre);
                 sliderMoviesBox.appendChild(BoxMovie);
                 sliderMoviesBox.appendChild(anchorLeft);
                 sliderMoviesBox.appendChild(anchorRight);
-                slider.appendChild(sliderMoviesBox);
-
+                BoxMovie.appendChild(poster);
+                
+                
+            
             });
         })
     )
@@ -70,6 +77,7 @@ const scrollslider = document.querySelector(".sliderMoviesBox");
 var scrollPerclick;
 
 var scrollAmount = 0;
+
 function sliderScrollLeft(){
     scrollslider.scrollTo({
         top: 0,
@@ -83,7 +91,7 @@ function sliderScrollLeft(){
 }
 
 function sliderScrollRight() {
-    if (scrollAmount <= slider.scrollWidth - slider.clientWidth) {
+    if (scrollAmount <= scrollslider.scrollWidth - scrollslider.clientWidth) {
         scrollslider.scrollTo({
             top: 0,
             left: (scrollAmount += scrollPerclick),
