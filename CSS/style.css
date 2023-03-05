@@ -126,9 +126,7 @@ img {
 }
 
 
-.sliderMovies{
-    
-    margin-bottom: 2rem;
+.sliderMovies{ 
     color: #fff;
 }
 
@@ -138,15 +136,24 @@ img {
     padding: 0 0 0.5rem 1.8rem;
 }
 
-.slider-container{
+
+.sliderMoviesBox{ 
     position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
 }
+
+
 
 .sliderButton{
     top: 0;
     height: 100%;
     width: 1.5rem;
-    background-color: rgba(22, 22, 22, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 450ms ease
 }
 
@@ -168,8 +175,8 @@ img {
 .switchLeft,
 .switchRight {
     color: #fff;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,16 +190,11 @@ img {
     background-color: rgba(44, 44, 44, 0.5);
 }
 
-.sliderMoviesBox{ 
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: center;
+.boxmovies{
+    margin-left: 1.5rem;
     display: flex;
-    align-items: center;
-    margin: 0 0 0 25px;
 }
-
-.sliderMoviesBox img{
+.boxmovies img{
     width: 30vw;
     max-width: 250px;
     aspect-ratio: 16 / 9;
@@ -203,11 +205,9 @@ img {
     cursor: pointer;
     transition: 0.5s ease-in-out;
     
-    
 }
 
-.sliderMoviesBox img:hover{
+.boxmovies img:hover{
     transform: scale(1.4);
-    
-    
+    z-index: 5;
 }
