@@ -1,256 +1,44 @@
-.movies-main{
-    color: #fff;  
-}
-.bg-main{
-    position: relative;
-}
-.bg-main:after{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(to top,#111, transparent 100%);
-}
-.bg-main .image-movies{
-    
-    object-fit: cover;
+document.addEventListener("click", e => {
+    let handle
+    if (e.target.matches(".sliderButton")) {
+        handle = e.target
+    } else {
+        handle = e.target.closest(".sliderButton")
+    }
+    if (handle != null) onHandleClick(handle)
+})
+
+function onHandleClick(handle) {
+    const slider = handle.closest(".sliderMoviesBox").querySelector(".boxmovies")
+    const sliderIndex = parseInt(
+        getComputedStyle(slider).getPropertyValue("--slider-index"))
+
+    if (handle.classList.contains("switchLeft")) {
+        slider.style.setProperty("--slider-index", sliderIndex - 1)
+    }
+
+    if (handle.classList.contains("switchRight")) {
+        slider.style.setProperty("--slider-index", sliderIndex + 1)
+    }
 }
 
-.info-trailer{
-    position: absolute;
-    top: 13rem;
-    left: 3rem;
-    width: 100%;
-}
-
-.info-trailer .logo-trailer{
-    width: 30%;
-}
-
-.info-trailer .description-movies{
-    width: 50%;
-}
-
-/* container buttton */
-.button-header {
-    display: flex;
-}
-
-/* tag button */
-.button-header button {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 0.2rem;
-    padding: 0.6rem 1.6rem;
-    font-size: 14px;
-    font-weight: 700;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-
-/* ครอบ div ระหว่าง ปุ่ม play กับ info */
-.button-header .play-btn,
-.info-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-header .play-btn:hover {
-    background-color: rgba(192, 192, 192, 0.8);
-}
-
-.info-btn {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-.info-btn:hover {
-    background-color: rgba(83, 83, 83, 0.5);
-}
-
-/* icons ปุ่ม play กับ info */
-.button-header .icons-btn {
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    padding-right: 0.5rem;
-}
-
-.info-rating {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    
-}
-
-.info-rating .icons-rating {
-    margin-right: 2rem;
-    padding: 0.6rem;
-    font-size: 20px;
-    border: 1px solid #fff;
-    border-radius: 50px;
-}
-
-.info-rating .rating-movies {
-    padding: 0.8rem 4rem 0.8rem 0.8rem;
-    border-left: 2px solid #c7c7c7;
-    background-color: rgba(83, 83, 83, 0.5);
-}
-
-
-<div class="main-movies">
-            <img src="/src/poster-navbar.jpg" alt="">
-            <div class="movies-header">
-                
-                <div class="description-header">
-                    <div class="description-container">
-                        <img class="logo-movies-header" src="/src/Avengers_endgame_logo.png" alt="">
-                        <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With
-                            the
-                            help of remaining allies, the Avengers assemble once more in order to reverse Thanos'
-                            actions
-                            and
-                            restore balance to the universe.</p>
-                        <div class="button-header">
-                            <div class="button-container">
-                                <button class="play-btn">
-                                    <div class="icons-btn">
-                                        <i class="fa-solid fa-play"></i>
-                                    </div>
-                                    <div class="font-btn">
-                                        Play
-                                    </div>
-                                </button>
-                                <button class="info-btn">
-                                    <div class="icons-btn">
-                                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="font-btn">
-                                        More Info
-                                    </div>
-                                </button>
-                            </div>
-                            
-                        </div>
+<div class="navbar-option-left">
+                <img class="logo-navbar" src="/src/Netflix-Logo.wine.svg" alt="">
+                <div class="navbar-option">
+                    <div class="dropdown">
+                        <a href="">More<i class="fa-solid fa-caret-down"></i></a>
                     </div>
-                    <!-- info rating -->
-                    <div class="info-rating">
-                        <div class="icons-rating">
-                            <i class="fa fa-volume-up" aria-hidden="true"></i>
-                        </div>
-                        <div class="rating-movies">
-                            16+
-                        </div>
-                    </div>
+                    <a href="">Home</a>
+                    <a href="">TV Shows</a>
+                    <a href="">Movies</a>
+                    <a href="">New & Popular</a>
+                    <a href="">My List</a>
+                    <a href="">Browse by Languages</a>
                 </div>
             </div>
-        </div>
-
-
-#navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999999;
-}
-
-.bgnavbar {
-    background: #000;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    transition: 0.2s all ease-in-out;
-    
-    
-}
-
-/* start ปุ่มเมนู navbar ฝั่งซ้าย */
-
-.navbar-container img {
-    
-    width: 30%;
-    object-fit: contain;
-    
-}
-.tab-primary-navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    
-}
-.list-menu{
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    width: 250px;
-    
-}
-.list-menu li{
-    padding: 0.7rem;
-}
-
-.list-menu li a{
-    
-    color: #fff;
-}
-.list-menu li:hover{
-    background-color: rgba(35, 35, 35, 0.6);
-}
-
-.browse-navbar{
-    color: #fff;
-    
-}
-
-
-/* end ปุ่มเมนู navbar ฝั่งซ้าย */
-
-/* start ปุ่มเมนู navbar ฝั่งขวา */
-.tab-second-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.account-navbar {
-    position: relative;
-    cursor: pointer;
-    
-}
-
-.account-icons {
-    width: 32px;
-    height: 32px;
-    border-radius: 5px;
-    background: red;
-    
-}
-
-.tab-second-navbar li{
-    padding: 0.7rem;
-}
-
-.tab-second-navbar li a{
-    color: #fff;
-}
-
-.account-dropdown {
-    position: absolute;
-    top: 0.5rem;
-    left: 2.5rem;
-    color: #fff;
-}
-
-/* end ปุ่มเมนู navbar ฝั่งขวา */
+            <div class="navbar-option-right">
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="">Kids</a>
+                <a href=""><i class="fa-regular fa-bell"></i></a>
+                <img class="image-profile" src="" alt=""><i class="fa-solid fa-caret-down"></i>
+            </div>

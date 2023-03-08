@@ -1,17 +1,17 @@
 // background Navbar scroll
-// function changeBg() {
-//     var navbar = document.querySelector(".navbar-container");
-//     var scrollValue = window.scrollY;
+window.onscroll = function() {scrollNavbar()};
 
-//     if(scrollValue < 50) {
-//         navbar.classList.remove("bgnavbar");
-//     } else {
-//         navbar.classList.add("bgnavbar");
-//     }
+function scrollNavbar(){
+    if(document.documentElement.scrollTop > 50){
+        document.querySelector("#navbar-container").className ="scroll";
+    } else{
+        document.querySelector("#navbar-container").className ="";
+    }
+};
 
-// }
-// window.addEventListener('scroll',changeBg)
 
+
+// Movies slider
 const slider = document.querySelector(".sliderMovies");
 
 showMovieData();
@@ -32,7 +32,7 @@ function showMovieData() {
         .then(data => {
             console.log(data.results)
             const movies = data.results;
-            
+
             const sliderMoviesBox = document.createElement('div');
             sliderMoviesBox.classList.add('sliderMoviesBox')
 
@@ -41,12 +41,10 @@ function showMovieData() {
 
             const anchorLeft = document.createElement('a');
             anchorLeft.classList.add("switchLeft", "sliderButton");
-            anchorLeft.onclick = function() { sliderScrollLeft(); };
             anchorLeft.textContent = "<";
 
             const anchorRight = document.createElement('a');
             anchorRight.classList.add("switchRight", "sliderButton");
-            anchorRight.onclick = function() { sliderScrollRight(); };
             anchorRight.textContent = ">";
 
             // const genre = document.createElement("h2");
@@ -63,42 +61,16 @@ function showMovieData() {
                 sliderMoviesBox.appendChild(anchorLeft);
                 sliderMoviesBox.appendChild(anchorRight);
                 BoxMovie.appendChild(poster);
-                
-                
-            
+
+
+
             });
         })
     )
-    scrollPerclick = 450;
-}
 
-const scrollslider = document.querySelector(".sliderMoviesBox");
+};
 
-var scrollPerclick;
 
-var scrollAmount = 0;
-
-function sliderScrollLeft(){
-    scrollslider.scrollTo({
-        top: 0,
-        left: (scrollAmount -= scrollPerclick),
-        behavior: "smooth"
-    });
-
-    if (scrollAmount < 0) {
-        scrollAmount = 0
-    }
-}
-
-function sliderScrollRight() {
-    if (scrollAmount <= scrollslider.scrollWidth - scrollslider.clientWidth) {
-        scrollslider.scrollTo({
-            top: 0,
-            left: (scrollAmount += scrollPerclick),
-            behavior: "smooth"
-        })
-    }
-}
 
 
 

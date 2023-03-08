@@ -13,17 +13,108 @@ body {
 
 li {
     list-style: none;
+    padding-right: 0.5rem;
 }
 
 a {
     text-decoration: none;
+    color: #fff;
 }
 
 img {
     width: 100%;
 }
 
+/* navbar website start */
 
+#navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    padding: 0 0.8rem;
+    z-index: 6;
+    transition: 350ms ease-in-out;
+}
+.scroll{
+    background-color: rgba(0, 0, 0);
+    
+}
+
+/* option left */
+.navbar-option-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-option-left .option-left {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 1vw;
+    width: 40%;
+    max-width: 250px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 3rem;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.option-left li:hover{
+    background-color: rgba(82, 79, 79, 0.5);
+}
+
+.option-left li {
+    text-align: center;
+    width: 100%;
+    padding: 0.8rem 0;
+}
+
+.navbar-option-left .logo-navbar {
+    width: 10vw;
+    max-width: 100px;
+}
+
+.option-browse :hover{
+    color: rgb(97, 97, 97);
+}
+.option-browse:hover .option-left{
+    display: block;
+}
+
+/* option right */
+.navbar-option-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-option-right .option-right {
+    display: flex;
+}
+
+.option-right a:hover{
+    color: rgb(97, 97, 97);
+}
+.navbar-option-right .image-profile {
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 3px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.navbar-option-right .dropdown {
+    display: none;
+}
+
+/* navbar website end */
+
+/* movies main poster start */
 .movies-main {
     position: relative;
     color: #fff;
@@ -33,7 +124,7 @@ img {
     aspect-ratio: 21 / 9;
     object-fit: cover;
     opacity: 0.7;
-    
+
 }
 
 .movies-main:after {
@@ -105,18 +196,18 @@ img {
     font-size: 0.7rem;
 }
 
-.icons-rating{
+.icons-rating {
     margin-right: 1rem;
 }
 
-.icons-rating i{
+.icons-rating i {
     border: 1px solid #fff;
     border-radius: 25px;
     width: 30px;
     height: 30px;
     text-align: center;
     padding-top: 8px;
-    
+
 }
 
 .rating-movies {
@@ -125,19 +216,21 @@ img {
     background-color: rgba(83, 83, 83, 0.5);
 }
 
+/* movies main poster end */
 
-.sliderMovies{ 
+/* movies start */
+.sliderMovies {
     color: #fff;
 }
 
-.slider-name{
+.slider-name {
     font-weight: 700;
     font-size: 1rem;
     padding: 0 0 0.5rem 1.8rem;
 }
 
 
-.sliderMoviesBox{ 
+.sliderMoviesBox {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
@@ -145,27 +238,28 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+
 }
 
 
 
-.sliderButton{
+.sliderButton {
     top: 0;
     height: 100%;
-    width: 1.5rem;
+    width: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 450ms ease
 }
 
-.switchLeft{
+.switchLeft {
     position: absolute;
     left: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    
+
 }
 
-.switchRight{
+.switchRight {
     position: absolute;
     right: 0;
     border-top-left-radius: 0.25rem;
@@ -182,7 +276,7 @@ img {
     align-items: center;
     z-index: 3;
     cursor: pointer;
-    
+
 }
 
 .switchLeft:hover,
@@ -190,24 +284,25 @@ img {
     background-color: rgba(44, 44, 44, 0.5);
 }
 
-.boxmovies{
-    margin-left: 1.5rem;
+.boxmovies {
+    margin-left: 2rem;
     display: flex;
 }
-.boxmovies img{
+
+.boxmovies img {
     width: 30vw;
     max-width: 250px;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     background-color: rgb(255, 255, 255);
     border-radius: 0.5rem;
-    margin: 0 10px 0 0 ;
+    margin: 0 10px 0 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
-    
 }
 
-.boxmovies img:hover{
+.boxmovies img:hover {
     transform: scale(1.4);
-    z-index: 5;
 }
+
+/* movies end */
