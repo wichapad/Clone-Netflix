@@ -6,10 +6,10 @@
 
 body {
     margin: 0 auto;
-    background-color: #111;
+    background-color: rgb(20, 20, 20);
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 
 li {
     list-style: none;
@@ -34,14 +34,13 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.5rem;
-    padding: 0 0.8rem;
+    padding: 0.2rem  0.8rem;
     z-index: 6;
     transition: 350ms ease-in-out;
 }
-.scroll{
-    background-color: rgba(0, 0, 0);
-    
+
+.scroll {
+    background-color: rgb(20, 20, 20);
 }
 
 /* option left */
@@ -50,27 +49,25 @@ img {
     align-items: center;
 }
 
-.navbar-option-left .option-left {
+.option-left ul {
     display: none;
     position: absolute;
-    top: 0;
+    top: 7vw;
     left: 1vw;
-    width: 40%;
+    width: 45%;
     max-width: 250px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 3rem;
+    font-size: 16px;
     background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid #fff;
 
 }
 
-.option-left li:hover{
+.option-left ul li:hover {
     background-color: rgba(82, 79, 79, 0.5);
 }
 
-.option-left li {
+.option-left ul li {
     text-align: center;
-    width: 100%;
     padding: 0.8rem 0;
 }
 
@@ -79,10 +76,20 @@ img {
     max-width: 100px;
 }
 
-.option-browse :hover{
+.option-browse a {
+    font-size: 1.3vw;
+    font-weight: 900;
+}
+
+.option-browse i {
+    padding-left: 0.5rem;
+}
+
+.option-browse :hover {
     color: rgb(97, 97, 97);
 }
-.option-browse:hover .option-left{
+
+.browse:hover .option-left {
     display: block;
 }
 
@@ -90,21 +97,29 @@ img {
 .navbar-option-right {
     display: flex;
     align-items: center;
+    margin-right: 1rem;
 }
 
 .navbar-option-right .option-right {
     display: flex;
 }
 
-.option-right a:hover{
+.option-right a:hover {
     color: rgb(97, 97, 97);
 }
-.navbar-option-right .image-profile {
-    background-color: red;
-    border: 2px solid red;
+
+.option-right li {
+    padding-right: 1rem;
+}
+
+.option-right li a {
+    font-size: 16px;
+}
+
+.navbar-option-right .image-profile img {
     border-radius: 3px;
-    width: 25px;
-    height: 25px;
+    width: 38px;
+    height: 38px;
     cursor: pointer;
 }
 
@@ -123,7 +138,7 @@ img {
 .movies-main .poster-movies {
     aspect-ratio: 21 / 9;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.6;
 
 }
 
@@ -155,6 +170,7 @@ img {
 
 .description {
     width: 40vw;
+    max-width: 650px;
     padding: 0.7rem 0;
 }
 
@@ -164,9 +180,9 @@ img {
 }
 
 .btn {
-    padding: 0.5rem 1.5rem;
+    padding: 1% 3%;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     font-weight: 700;
     border: none;
     border-radius: 5px;
@@ -174,7 +190,7 @@ img {
 }
 
 .play:hover {
-    background-color: rgba(82, 79, 79, 0.8);
+    background-color: rgba(236, 236, 236, 0.5);
 }
 
 .info {
@@ -184,7 +200,7 @@ img {
 }
 
 .info:hover {
-    background-color: rgba(44, 43, 43, 0.5);
+    background-color: rgba(71, 71, 71, 0.5);
 }
 
 .info-rating {
@@ -193,26 +209,31 @@ img {
     right: 0;
     display: flex;
     align-items: center;
-    font-size: 0.7rem;
+    cursor: pointer;
 }
 
 .icons-rating {
     margin-right: 1rem;
+    font-size: 0.9rem;
 }
 
 .icons-rating i {
     border: 1px solid #fff;
     border-radius: 25px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     text-align: center;
     padding-top: 8px;
+}
 
+.icons-rating i:hover {
+    background-color: rgba(53, 53, 53, 0.5);
 }
 
 .rating-movies {
-    padding: 10px 45px 10px 10px;
-    border-left: 2px solid #c7c7c7;
+    font-size: 14px;
+    padding: 10px 50px 10px 10px;
+    border-left: 3px solid #ffffff;
     background-color: rgba(83, 83, 83, 0.5);
 }
 
@@ -221,6 +242,7 @@ img {
 /* movies start */
 .sliderMovies {
     color: #fff;
+    margin-bottom: 3rem;
 }
 
 .slider-name {
@@ -241,13 +263,11 @@ img {
 
 }
 
-
-
 .sliderButton {
     top: 0;
     height: 100%;
     width: 2rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: hsla(0, 0%, 8%, .5);
     transition: background-color 450ms ease
 }
 
@@ -281,7 +301,7 @@ img {
 
 .switchLeft:hover,
 .switchRight:hover {
-    background-color: rgba(44, 44, 44, 0.5);
+    background-color: hsla(0, 0%, 8%, .7);
 }
 
 .boxmovies {
@@ -295,8 +315,8 @@ img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     background-color: rgb(255, 255, 255);
-    border-radius: 0.5rem;
-    margin: 0 10px 0 0;
+    border-radius: 2px;
+    margin: 0 5px 0 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
@@ -306,3 +326,105 @@ img {
 }
 
 /* movies end */
+
+/* footer start */
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0;
+    max-width: 980px;
+    padding: 0 3rem;
+    font-size: 14px;
+    color: #434343;
+}
+
+.social-link {
+    font-size: 1.3rem;
+}
+
+.social-link a {
+    padding-right: 0.5rem;
+}
+
+.member-link {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem 0;
+}
+
+.member-link-wrapper {
+    padding-bottom: 1rem;
+}
+
+.member-link-wrapper a {
+    color: #434343;
+}
+
+.member-link-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.member-service {
+    margin-bottom: 1.5rem;
+}
+
+.service-code {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #434343;
+}
+
+/* footer end */
+
+/* media quries */
+/* tablet screen */
+@media (min-width: 800px) {
+    .option-browse a {
+        font-size: 1.5vw;
+        font-weight: 900;
+    }
+
+    .member-link {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 885px) {
+
+    /* option left */
+    .option-left ul {
+        position: static;
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .option-left ul li {
+        padding: 0 0.5rem;
+    }
+
+    .option-left ul li:hover {
+        background: none;
+    }
+
+    .option-left ul li a:hover {
+        color: rgb(97, 97, 97);
+    }
+
+    .option-browse {
+        display: none;
+    }
+
+}
+
+@media (min-width: 950px) {
+    /* option right */
+    .navbar-option-right .dropdown {
+        display: block;
+        margin-left: 0.5rem;
+    }
+    
+}

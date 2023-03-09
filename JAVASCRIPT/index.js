@@ -9,7 +9,8 @@ function scrollNavbar(){
     }
 };
 
-
+// hover browse show list-navbar mobile screen
+ 
 
 // Movies slider
 const slider = document.querySelector(".sliderMovies");
