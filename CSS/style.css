@@ -6,7 +6,7 @@
 
 body {
     margin: 0 auto;
-    background-color: rgb(20, 20, 20);
+    background-color: #111;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -76,9 +76,10 @@ img {
     max-width: 100px;
 }
 
-.option-browse a {
+.option-browse .browse {
     font-size: 1.3vw;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .option-browse i {
@@ -87,10 +88,6 @@ img {
 
 .option-browse :hover {
     color: rgb(97, 97, 97);
-}
-
-.browse:hover .option-left {
-    display: block;
 }
 
 /* option right */
@@ -136,7 +133,7 @@ img {
 }
 
 .movies-main .poster-movies {
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     opacity: 0.6;
 
@@ -157,7 +154,6 @@ img {
     top: 18%;
     left: 0;
     width: 100%;
-    z-index: 1;
 }
 
 .description-movies {
@@ -180,7 +176,7 @@ img {
 }
 
 .btn {
-    padding: 1% 3%;
+    padding: 0.5rem 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2vw;
     font-weight: 700;
@@ -245,10 +241,11 @@ img {
     margin-bottom: 3rem;
 }
 
-.slider-name {
+.title {
     font-weight: 700;
     font-size: 1rem;
-    padding: 0 0 0.5rem 1.8rem;
+    padding: 0 0 0.5rem 2rem;
+    display: inline-block;
 }
 
 
@@ -260,7 +257,6 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-
 }
 
 .sliderButton {
@@ -276,7 +272,6 @@ img {
     left: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-
 }
 
 .switchRight {
@@ -289,9 +284,7 @@ img {
 .switchLeft,
 .switchRight {
     color: #fff;
-    font-weight: 500;
     font-size: 25px;
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 3;
@@ -315,10 +308,11 @@ img {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     background-color: rgb(255, 255, 255);
-    border-radius: 2px;
+    border-radius: 5px;
     margin: 0 5px 0 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
+    
 }
 
 .boxmovies img:hover {
