@@ -34,7 +34,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem  0.8rem;
+    padding: 0.2rem 0.8rem;
     z-index: 6;
     transition: 350ms ease-in-out;
 }
@@ -49,31 +49,13 @@ img {
     align-items: center;
 }
 
-.option-left ul {
-    display: none;
-    position: absolute;
-    top: 7vw;
-    left: 1vw;
-    width: 45%;
-    max-width: 250px;
-    font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 1px solid #fff;
-
-}
-
-.option-left ul li:hover {
-    background-color: rgba(82, 79, 79, 0.5);
-}
-
-.option-left ul li {
-    text-align: center;
-    padding: 0.8rem 0;
-}
-
 .navbar-option-left .logo-navbar {
     width: 10vw;
     max-width: 100px;
+}
+
+.option-browse {
+    position: relative;
 }
 
 .option-browse .browse {
@@ -82,12 +64,41 @@ img {
     cursor: pointer;
 }
 
-.option-browse i {
+.option-browse .browse i {
     padding-left: 0.5rem;
 }
 
 .option-browse :hover {
     color: rgb(97, 97, 97);
+}
+
+.option-left:hover .sub-option {
+    display: block;
+}
+
+.sub-option {
+    display: none;
+    position: absolute;
+    top: 5vw;
+    left: 1vw;
+    width: 45%;
+    max-width: 250px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid #fff;
+}
+
+.sub-option ul li:hover {
+    background-color: rgba(82, 79, 79, 0.5);
+}
+
+.sub-option ul li {
+    text-align: center;
+    padding: 0.8rem 0;
+}
+
+.navigation-tab {
+    display: none;
 }
 
 /* option right */
@@ -312,7 +323,7 @@ img {
     margin: 0 5px 0 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
-    
+
 }
 
 .boxmovies img:hover {
@@ -386,26 +397,26 @@ img {
 @media (min-width: 885px) {
 
     /* option left */
-    .option-left ul {
-        position: static;
+    .navigation-tab {
         display: flex;
-        align-items: center;
-        background: none;
-        border: none;
-        width: 100%;
-        max-width: 100%;
+        color: #e5e5e5;
     }
 
-    .option-left ul li {
-        padding: 0 0.5rem;
+    .navigation-tab li{
+        padding-right: 0.8rem;
     }
-
-    .option-left ul li:hover {
-        background: none;
-    }
-
-    .option-left ul li a:hover {
+    .nav-tab:hover{
         color: rgb(97, 97, 97);
+    }
+
+    .nav-tab.active{
+        color: #fff;
+        cursor: default;
+        font-weight: 700;
+    }
+
+    .sub-option {
+        display: none;
     }
 
     .option-browse {
@@ -415,10 +426,11 @@ img {
 }
 
 @media (min-width: 950px) {
+
     /* option right */
     .navbar-option-right .dropdown {
         display: block;
         margin-left: 0.5rem;
     }
-    
+
 }

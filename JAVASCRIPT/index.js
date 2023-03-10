@@ -9,18 +9,15 @@ function scrollNavbar(){
     }
 };
 
-// hover browse show list-navbar mobile screen
- 
 
 
-
-
-
-
-
-
-// Movies slider
 const slider = document.querySelector(".sliderMovies");
+const sliderBox =document.querySelector(".boxmovies");
+const imageBox = document.querySelectorAll(".boxmovies img");
+const sliderLeft = document.querySelector(".switchLeft");
+const sliderRight = document.querySelector(".switchRight");
+
+// show Movies fecth API
 
 showMovieData();
 
@@ -34,9 +31,6 @@ function showMovieData() {
         `https://api.themoviedb.org/3/discover/movie/?api_key=${api_key}&with_genres=35&with_cast=23659&sort_by=revenue.desc`,
         `https://api.themoviedb.org/3/discover/movie/?api_key=${api_key}&with_genres=878&with_cast=500&sort_by=vote_average.desc`
     ];
-    const title = [
-        
-    ]
 
     urls.map(url => fetch(url)
         .then(res => res.json())
@@ -79,6 +73,29 @@ function showMovieData() {
     )
 
 };
+
+// slider movies
+let counter = 1;
+const slieWidth = imageBox[0].clientWidth;
+sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
+
+
+sliderRight.addEventListener("click", nextSlide);
+function nextSlide(){
+    if (counter >= imageBox.length - 1) return;
+    sliderBox.style.transition = 'transform 0.3s ease-in-out';
+    counter++;
+    sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
+};
+
+sliderLeft.addEventListener("click", prevSlide);
+function prevSlide(){
+    if (counter <= 0) return;
+    sliderBox.style.transition = 'transform 0.3s ease-in-out';
+    counter--;
+    sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
+};
+
 
 
 
