@@ -1,23 +1,21 @@
 // background Navbar scroll
-window.onscroll = function() {scrollNavbar()};
+window.onscroll = function () { scrollNavbar() };
 
-function scrollNavbar(){
-    if(document.documentElement.scrollTop > 50){
-        document.querySelector("#navbar-container").className ="scroll";
-    } else{
-        document.querySelector("#navbar-container").className ="";
+function scrollNavbar() {
+    if (document.documentElement.scrollTop > 50) {
+        document.querySelector("#navbar-container").className = "scroll";
+    } else {
+        document.querySelector("#navbar-container").className = "";
     }
 };
 
 
 
-const slider = document.querySelector(".sliderMovies");
-const sliderBox =document.querySelector(".boxmovies");
-const imageBox = document.querySelectorAll(".boxmovies img");
-const sliderLeft = document.querySelector(".switchLeft");
-const sliderRight = document.querySelector(".switchRight");
+
+
 
 // show Movies fecth API
+const slider = document.querySelector(".sliderMovies");
 
 showMovieData();
 
@@ -45,56 +43,67 @@ function showMovieData() {
             BoxMovie.classList.add("boxmovies")
 
             const anchorLeft = document.createElement('a');
-            anchorLeft.classList.add("switchLeft", "sliderButton","fa-solid","fa-chevron-left");
-            anchorLeft.style.display ="flex";
+            anchorLeft.classList.add("switchLeft", "sliderButton", "fa-solid", "fa-chevron-left");
+            anchorLeft.style.display = "flex";
 
             const anchorRight = document.createElement('a');
-            anchorRight.classList.add("switchRight", "sliderButton","fa-solid","fa-chevron-right");
-            anchorRight.style.display ="flex";
+            anchorRight.classList.add("switchRight", "sliderButton", "fa-solid", "fa-chevron-right");
+            anchorRight.style.display = "flex";
+
 
             const title = document.createElement("h2");
             title.classList.add("title")
             title.textContent = "trending Now";
+            
 
+            slider.appendChild(title);
+            slider.appendChild(sliderMoviesBox);
+            sliderMoviesBox.appendChild(BoxMovie);
+            sliderMoviesBox.appendChild(anchorLeft);
+            sliderMoviesBox.appendChild(anchorRight);
             movies.forEach(function (movie) {
 
                 const poster = document.createElement('img');
                 poster.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
 
-                slider.appendChild(title);
-                slider.appendChild(sliderMoviesBox);
-                sliderMoviesBox.appendChild(BoxMovie);
+
+
                 BoxMovie.appendChild(poster);
-                sliderMoviesBox.appendChild(anchorLeft);
-                sliderMoviesBox.appendChild(anchorRight);
-                
+
+
             });
+
         })
     )
 
 };
 
 // slider movies
-let counter = 1;
-const slieWidth = imageBox[0].clientWidth;
-sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
 
+document.addEventListener("click", e => {
+    let slide;
+    if (e.target.matches(".sliderButton")) {
+        slide = e.target;
+    } else {
+        slide = e.target.closest(".sliderButton")
+    }
+    if (slide != null) onHandleClick(slide);
+})
 
-sliderRight.addEventListener("click", nextSlide);
-function nextSlide(){
-    if (counter >= imageBox.length - 1) return;
-    sliderBox.style.transition = 'transform 0.3s ease-in-out';
-    counter++;
-    sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
-};
-
-sliderLeft.addEventListener("click", prevSlide);
-function prevSlide(){
-    if (counter <= 0) return;
-    sliderBox.style.transition = 'transform 0.3s ease-in-out';
-    counter--;
-    sliderBox.style.transform = `translateX(-${slieWidth * counter}px)`;
-};
+function onHandleClick(slide) {
+    const sliderBox = slide.closest(".sliderMoviesBox").querySelector(".boxmovies");
+    const sliderIndex = parseInt(getComputedStyle(sliderBox).getPropertyValue("--slider-index"));
+    console.log(sliderIndex)
+    console.log(sliderBox)
+    if (slide.classList.contains("switchLeft")) {
+        
+        sliderBox.style.setProperty("--slider-index", sliderIndex -1);
+    } 
+    if (slide.classList.contains("switchRight")) {
+        sliderBox.style.setProperty("--slider-index", sliderIndex +1);
+    } 
+    
+}
 
 
 

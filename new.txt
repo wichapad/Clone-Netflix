@@ -42,3 +42,11 @@ function onHandleClick(handle) {
                 <a href=""><i class="fa-regular fa-bell"></i></a>
                 <img class="image-profile" src="" alt=""><i class="fa-solid fa-caret-down"></i>
             </div>
+
+
+        <h2 class="title">trending Now</h2>
+         <div class="sliderMoviesBox">
+         <div class="boxmovies"></div>
+        <a class="switchLeft sliderButton fa-solid fa-chevron-left" style="display: flex;"></a>
+        <a class="switchRight sliderButton fa-solid fa-chevron-right" style="display: flex;"></a>
+        </div>   
