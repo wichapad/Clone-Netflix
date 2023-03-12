@@ -261,7 +261,6 @@ img {
 
 
 .sliderMoviesBox {
-    
     position: relative;
     overflow: hidden;
     white-space: nowrap;
@@ -310,11 +309,11 @@ img {
 }
 
 .boxmovies {
-    /* --slider-index: 0; */
+    --slider-index: 0;
     margin-left: 2rem;
     display: flex;
-    /* transform: translateX(calc(var(--slider-index) * -10%));
-    transition: transform 350ms ease-in-out; */
+    transform: translateX(calc(var(--slider-index) * -10%));
+    transition: transform 350ms ease-in-out;
 }
 
 .boxmovies img {

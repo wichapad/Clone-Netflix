@@ -77,59 +77,34 @@ function showMovieData() {
 
 // slider movies
 
-// document.addEventListener("click", e => {
-//     let slide;
-//     if (e.target.matches(".sliderButton")) {
-//         slide = e.target;
-//     } else {
-//         slide = e.target.closest(".sliderButton")
-//     }
-//     if (slide != null) onHandleClick(slide);
-// })
-
-// function onHandleClick(slide) {
-//     const sliderBox = slide.closest(".sliderMoviesBox").querySelector(".boxmovies");
-//     const sliderIndex = parseInt(getComputedStyle(sliderBox).getPropertyValue("--slider-index"));
-//     console.log(sliderIndex)
-//     console.log(sliderBox)
-//     if (slide.classList.contains("switchLeft")) {
-
-//         sliderBox.style.setProperty("--slider-index", sliderIndex - 1);
-//     }
-//     if (slide.classList.contains("switchRight")) {
-//         sliderBox.style.setProperty("--slider-index", sliderIndex + 1);
-//     }
-
-// }
-const sliderBox = document.querySelector(".sliderMoviesBox");
-const BoxMovies = document.querySelector(".boxmovies");
-
-const sliderBoxWidth = sliderBox.getBoundingClientRect().width;
-
-const prevButton = document.querySelector(".switchLeft");
-const nextButton = document.querySelector(".switchRight");
-let currentIndex = 0;
-
-BoxMovies.forEach(BoxMovie => {
-    BoxMovie.style.width = `${sliderBoxWidth}px`;
+document.addEventListener("click", e => {
+    let slide;
+    if (e.target.matches(".sliderButton")) {
+        slide = e.target;
+    } else {
+        slide = e.target.closest(".sliderButton")
+    }
+    if (slide != null) onHandleClick(slide);
 })
 
-prevButton.addEventListener('click', () => {
-    const newSlideIndex = currentIndex - 1 < 0 ? BoxMovies.length - 1 : currentIndex - 1;
 
-    const offset = -newSlideIndex * sliderBoxWidth;
-    sliderBox.querySelector('.boxmovies').style.transform = `translateX(${offset}px)`;
+function onHandleClick(slide) {
+    const sliderBox = slide.closest(".sliderMoviesBox").querySelector(".boxmovies");
+    const sliderIndex = parseInt(getComputedStyle(sliderBox).getPropertyValue("--slider-index"));
+    console.log(sliderIndex)
+    console.log(sliderBox)
+    if (slide.classList.contains("switchLeft")) {
+        sliderBox.style.setProperty("--slider-index", sliderIndex - 1);
+    }
+    if (slide.classList.contains("switchRight")) {
+        sliderBox.style.setProperty("--slider-index", sliderIndex + 1);
+    }
 
-    currentIndex = newSlideIndex;
-})
-nextButton.addEventListener('click', () => {
-    const newSlideIndex = currentIndex + 1 >= BoxMovies.length ? 0 : currentIndex + 1;
+}
 
-    const offset = -newSlideIndex * sliderBoxWidth;
-    sliderBox.querySelector('.boxmovies').style.transform = `translateX(${offset}px)`;
 
-    currentIndex = newSlideIndex;
-})
+
+
 
 
 
