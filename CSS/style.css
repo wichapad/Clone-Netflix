@@ -268,12 +268,17 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+   
 }
 
-.sliderButton {
-    top: 0;
+.sliderMoviesBox > button {
     height: 100%;
     width: 2rem;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 25px;
+    
     background-color: hsla(0, 0%, 8%, .5);
     transition: background-color 450ms ease
 }
@@ -283,6 +288,7 @@ img {
     left: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
+    
 }
 
 .switchRight {
@@ -290,30 +296,20 @@ img {
     right: 0;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-}
-
-.switchLeft,
-.switchRight {
-    color: #fff;
-    font-size: 25px;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-    cursor: pointer;
-
+    
 }
 
 .switchLeft:hover,
 .switchRight:hover {
-    background-color: hsla(0, 0%, 8%, .7);
+    background-color: rgba(7, 6, 6, 0.7);
 }
 
 .boxmovies {
-    --slider-index: 0;
+    /* --slider-index: 0; */
     margin-left: 2rem;
     display: flex;
-    transform: translateX(calc(var(--slider-index) * -10%));
-    transition: transform 350ms ease-in-out;
+    width: calc(100% - 30px);
+    transition: transform 0.5s ease-in-out;
 }
 
 .boxmovies img {
@@ -326,11 +322,12 @@ img {
     margin: 0 5px 0 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
-
+    
 }
 
 .boxmovies img:hover {
     transform: scale(1.4);
+   
 }
 
 /* movies end */
