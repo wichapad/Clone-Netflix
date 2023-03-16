@@ -95,7 +95,7 @@ function onHandleClick(slide) {
     const sliderBoxCon = slide.closest(".sliderMoviesBox");
     const sliderBox = sliderBoxCon.querySelector(".boxmovies");
     const slideWidth = sliderBox.offsetWidth;
-    const numSlides = sliderBox.querySelectorAll("img")[0];
+    const numSlides = sliderBox.children.length;
 
 
     console.log(numSlides);
