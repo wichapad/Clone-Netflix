@@ -324,7 +324,6 @@ img {
 
 .boxmovies img:hover {
     transform: scale(1.2);
-    z-index: 5;
 }
 
 /* movies end */
