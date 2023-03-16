@@ -31,7 +31,7 @@ function showMovieData() {
         `https://api.themoviedb.org/3/discover/movie/?api_key=${api_key}&with_genres=878&with_cast=500&sort_by=vote_average.desc`
     ];
 
-
+    
     urls.map(url => fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -45,13 +45,12 @@ function showMovieData() {
             BoxMovie.classList.add("boxmovies")
 
             const anchorLeft = document.createElement('button');
-            anchorLeft.classList.add("switchLeft", "fa-solid", "fa-chevron-left");
-            
+            anchorLeft.classList.add("switchLeft", "switchButton", "fa-solid", "fa-chevron-left");
+
 
             const anchorRight = document.createElement('button');
-            anchorRight.classList.add("switchRight", "fa-solid", "fa-chevron-right");
-           
-
+            anchorRight.classList.add("switchRight", "switchButton", "fa-solid", "fa-chevron-right");
+            
             const title = document.createElement("h2");
             title.classList.add("title")
             title.textContent = "Trending Now";
@@ -64,7 +63,7 @@ function showMovieData() {
 
             movies.forEach(function (movie) {
                 const poster = document.createElement('img');
-                poster.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+                poster.src = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
                 BoxMovie.appendChild(poster); // ภายใน div ชั้น 3
 
             });
@@ -85,22 +84,23 @@ document.addEventListener("click", e => {
     } else {
         slide = e.target.closest(".switchLeft,.switchRight");
     }
-    if (slide != null){
+    if (slide != null) {
         onHandleClick(slide);
     }
 });
+
 
 let sliderIndex = 0;
 function onHandleClick(slide) {
     const sliderBoxCon = slide.closest(".sliderMoviesBox");
     const sliderBox = sliderBoxCon.querySelector(".boxmovies");
     const slideWidth = sliderBox.offsetWidth;
-    const numSlides = sliderBox.children.length;
+    const numSlides = sliderBox.querySelectorAll("img")[0];
 
-    
+
     console.log(numSlides);
     console.log(slideWidth);
-    
+
     if (slide.classList.contains("switchLeft")) {
         sliderIndex = (sliderIndex - 1 + numSlides) % numSlides;
         if (sliderIndex === numSlides - 1) {
@@ -116,7 +116,7 @@ function onHandleClick(slide) {
             sliderBox.style.transform = `translateX(0)`;
             sliderIndex = 1;
         }
-    } 
+    }
     sliderBox.style.transform = `translateX(${-sliderIndex * slideWidth}px)`;
 }
 

@@ -146,8 +146,7 @@ img {
 .movies-main .poster-movies {
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    opacity: 0.6;
-
+    filter: brightness(60%);
 }
 
 .movies-main:after {
@@ -250,6 +249,7 @@ img {
 .sliderMovies {
     color: #fff;
     margin-bottom: 3rem;
+    overflow: hidden;
 }
 
 .title {
@@ -262,25 +262,24 @@ img {
 
 .sliderMoviesBox {
     position: relative;
-    overflow: hidden;
+    
     white-space: nowrap;
     text-align: center;
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-   
 }
 
-.sliderMoviesBox > button {
+.switchButton {
     height: 100%;
     width: 2rem;
     border: none;
     cursor: pointer;
     color: #fff;
     font-size: 25px;
-    
     background-color: hsla(0, 0%, 8%, .5);
-    transition: background-color 450ms ease
+    transition: background-color 450ms ease;
+    
 }
 
 .switchLeft {
@@ -288,7 +287,6 @@ img {
     left: 0;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    
 }
 
 .switchRight {
@@ -296,7 +294,6 @@ img {
     right: 0;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
-    
 }
 
 .switchLeft:hover,
@@ -326,8 +323,8 @@ img {
 }
 
 .boxmovies img:hover {
-    transform: scale(1.4);
-   
+    transform: scale(1.2);
+    z-index: 5;
 }
 
 /* movies end */
